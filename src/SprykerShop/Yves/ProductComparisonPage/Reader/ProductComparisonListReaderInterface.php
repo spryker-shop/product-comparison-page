@@ -10,10 +10,10 @@ namespace SprykerShop\Yves\ProductComparisonPage\Reader;
 interface ProductComparisonListReaderInterface
 {
     /**
-     * @param list<string> $skus
+     * @param array<string> $skus
      * @param string $localeName
      *
-     * @return list<\Generated\Shared\Transfer\ProductViewTransfer>
+     * @return array<\Generated\Shared\Transfer\ProductViewTransfer>
      */
     public function getProductsCompareList(array $skus, string $localeName): array;
 }

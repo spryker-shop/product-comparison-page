@@ -10,9 +10,9 @@ namespace SprykerShop\Yves\ProductComparisonPage\Collector;
 class ProductAttributeCollector implements ProductAttributeCollectorInterface
 {
     /**
-     * @param list<\Generated\Shared\Transfer\ProductViewTransfer> $productViewTransfers
+     * @param array<\Generated\Shared\Transfer\ProductViewTransfer> $productViewTransfers
      *
-     * @return list<string>
+     * @return array<string>
      */
     public function collectUniqueProductAttributes(array $productViewTransfers): array
     {

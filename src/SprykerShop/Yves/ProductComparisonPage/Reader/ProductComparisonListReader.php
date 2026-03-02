@@ -26,9 +26,6 @@ class ProductComparisonListReader implements ProductComparisonListReaderInterfac
      */
     protected ProductComparisonPageToProductStorageClientInterface $productStorageClient;
 
-    /**
-     * @param \SprykerShop\Yves\ProductComparisonPage\Dependency\Client\ProductComparisonPageToProductStorageClientInterface $productStorageClient
-     */
     public function __construct(ProductComparisonPageToProductStorageClientInterface $productStorageClient)
     {
         $this->productStorageClient = $productStorageClient;

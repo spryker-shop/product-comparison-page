@@ -32,11 +32,6 @@ class ProductComparisonViewController extends AbstractController
      */
     protected const RESPONSE_KEY_ATTRIBUTES = 'attributes';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Spryker\Yves\Kernel\View\View
-     */
     public function indexAction(Request $request): View
     {
         return $this->view(

@@ -19,25 +19,16 @@ use SprykerShop\Yves\ProductComparisonPage\Reader\ProductComparisonListReaderInt
  */
 class ProductComparisonPageFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\ProductComparisonPage\Reader\ProductComparisonListReaderInterface
-     */
     public function createProductComparisonListReader(): ProductComparisonListReaderInterface
     {
         return new ProductComparisonListReader($this->getProductStorageClient());
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductComparisonPage\Collector\ProductAttributeCollectorInterface
-     */
     public function createProductAttributeCollector(): ProductAttributeCollectorInterface
     {
         return new ProductAttributeCollector();
     }
 
-    /**
-     * @return \SprykerShop\Yves\ProductComparisonPage\Dependency\Client\ProductComparisonPageToProductStorageClientInterface
-     */
     public function getProductStorageClient(): ProductComparisonPageToProductStorageClientInterface
     {
         return $this->getProvidedDependency(ProductComparisonPageDependencyProvider::CLIENT_PRODUCT_STORAGE);

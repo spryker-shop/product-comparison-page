@@ -20,6 +20,16 @@ export default class ComparisonLink extends Component {
     }
 
     get url(): string {
-        return this.getAttribute('url');
+        const url = this.getAttribute('url') ?? '';
+
+        try {
+            const { pathname, search, hash } = new URL(url, window.location.origin);
+
+            return (pathname + search + hash).replace(/\/\//g, '/');
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error(error);
+            return '/';
+        }
     }
 }

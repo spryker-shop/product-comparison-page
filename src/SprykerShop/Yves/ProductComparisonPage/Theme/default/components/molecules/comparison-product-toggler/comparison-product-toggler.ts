@@ -9,7 +9,6 @@ export default class ComparisonProductToggler extends Component {
     protected addTemplate: string;
     protected removeTemplate: string;
 
-    protected readyCallback(): void {}
     protected init(): void {
         this.buttonPlaceholder = this.querySelector<HTMLElement>(`.${this.jsName}__button-placeholder`);
         this.button = this.querySelector<HTMLButtonElement>(`.${this.jsName}__button`);

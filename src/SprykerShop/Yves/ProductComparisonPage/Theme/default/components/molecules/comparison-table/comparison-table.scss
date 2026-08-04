@@ -1,12 +1,19 @@
+@use 'sass:meta';
+@use 'sass:map';
+
 @mixin product-comparison-page-comparison-table($name: '.comparison-table') {
     #{$name} {
         overflow-x: auto;
+
+        @if meta.mixin-exists(product-comparison-page-comparison-table-base-hook) {
+            @include product-comparison-page-comparison-table-base-hook;
+        }
 
         &__list {
             display: grid;
             grid-template-columns: repeat(var(--comparison-repeat-columns, 1), minmax(10rem, 1fr));
 
-            @include helper-breakpoint-media-min(helper-breakpoint-edge-min(map-get($setting-breakpoints, lg))) {
+            @include helper-breakpoint-media-min(helper-breakpoint-edge-min(map.get($setting-breakpoints, lg))) {
                 grid-template-columns: minmax(min-content, 15rem) repeat(
                         var(--comparison-repeat-columns, 1),
                         minmax(15rem, 1fr)
@@ -23,7 +30,7 @@
         &__list-row {
             display: contents;
 
-            @include helper-breakpoint-media-min(helper-breakpoint-edge-min(map-get($setting-breakpoints, lg))) {
+            @include helper-breakpoint-media-min(helper-breakpoint-edge-min(map.get($setting-breakpoints, lg))) {
                 &:nth-child(2n + 2) #{$name}__list-cell {
                     background: $setting-color-light;
                 }
@@ -41,7 +48,7 @@
             &--name {
                 background: $setting-color-light;
 
-                @include helper-breakpoint-media-min(helper-breakpoint-edge-min(map-get($setting-breakpoints, lg))) {
+                @include helper-breakpoint-media-min(helper-breakpoint-edge-min(map.get($setting-breakpoints, lg))) {
                     text-align: left;
                     background: $setting-color-transparent;
                 }
@@ -50,7 +57,7 @@
             &--sm-full {
                 grid-column: 1 / -1;
 
-                @include helper-breakpoint-media-min(helper-breakpoint-edge-min(map-get($setting-breakpoints, lg))) {
+                @include helper-breakpoint-media-min(helper-breakpoint-edge-min(map.get($setting-breakpoints, lg))) {
                     grid-column: 1;
                 }
             }

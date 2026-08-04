@@ -4,7 +4,6 @@ import { COMPARISON_STORAGE_KEY } from '../comparison-link/comparison-link';
 export default class ClearComparison extends Component {
     protected button: HTMLButtonElement;
 
-    protected readyCallback(): void {}
     protected init(): void {
         this.button = this.querySelector<HTMLButtonElement>(`.${this.jsName}__button`);
 

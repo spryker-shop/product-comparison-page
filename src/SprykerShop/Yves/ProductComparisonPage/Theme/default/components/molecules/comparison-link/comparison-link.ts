@@ -3,8 +3,6 @@ import Component from 'ShopUi/models/component';
 export const COMPARISON_STORAGE_KEY = 'comparison-skus';
 
 export default class ComparisonLink extends Component {
-    protected readyCallback(): void {}
-
     protected init(): void {
         this.querySelector<HTMLButtonElement>(`.${this.jsName}__link`).addEventListener('click', (event: Event) =>
             this.redirect(event),

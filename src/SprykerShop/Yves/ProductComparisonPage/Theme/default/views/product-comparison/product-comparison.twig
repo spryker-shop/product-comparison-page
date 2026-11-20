@@ -27,5 +27,9 @@
                 },
             } only %}
         {% endblock %}
+
+        {% block productTrackingDetails %}
+            {% widget 'ProductTrackingDetailsWidget' args [data.products] only %}{% endwidget %}
+        {% endblock %}
     </div>
 {% endblock %}
